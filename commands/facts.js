@@ -4,6 +4,7 @@ module.exports = {
   name: "facts",
   description: "Spitting Random facts",
   execute(msg, args) {
+      
     let factsRep = setInterval(function () {
       const URL = "https://useless-facts.sameerkumar.website/api";
 

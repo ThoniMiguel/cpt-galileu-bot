@@ -30,9 +30,6 @@ client.on("message", (msg) => {
     case "facts":
       client.commands.get("facts").execute(msg, args);
       break;
-    case "mimir":
-      client.commands.get("mimir").execute(msg, args);
-      break;
     case "help":
       client.commands.get("help").execute(msg, args);
       break;
