@@ -4,7 +4,6 @@ module.exports = {
   name: "facts",
   description: "Spitting Random facts",
   execute(msg, args) {
-      
     let factsRep = setInterval(function () {
       const URL = "https://useless-facts.sameerkumar.website/api";
 
@@ -19,7 +18,6 @@ module.exports = {
           let fact = processedResponse.data;
           msg.channel.send(fact);
         });
-    },600000);
+    }, 3600000);
   },
 };
-
