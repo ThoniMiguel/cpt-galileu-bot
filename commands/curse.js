@@ -13,15 +13,17 @@ function api(msg) {
   fetch(url)
     .then((data) => data.json())
     .then((res) => {
-      let curse = res.insult;
-      const userList = msg.guild.members.cache.array();
-      let randomNumber = Math.round(Math.random() * msg.guild.memberCount);
-      let pingPerson = userList[randomNumber];
-      console.log(
-        `curse:${curse}, userList:${userList}, randomNumber: ${randomNumber}, pingPerson:${pingPerson}`
-      );
-      msg.channel
-        .send("<@" + pingPerson.user.id + ">")
-        .then(msg.delete({ timeout: 0 }));
+      //   let curse = res.insult;
+      //   const userList = msg.guild.members.cache.array();
+      //   let randomNumber = Math.round(Math.random() * msg.guild.memberCount);
+      //   let pingPerson = userList[randomNumber];
+      //   console.log(
+      //     `curse:${curse}, userList:${userList}, randomNumber: ${randomNumber}, pingPerson:${pingPerson}`
+      //   );
+      //   msg.channel
+      //     .send("<@" + pingPerson.user.id + ">")
+      //     .then(msg.delete({ timeout: 0 }));
+      let user = msg.guild.members.random();
+      console.log(user.user);
     });
 }
