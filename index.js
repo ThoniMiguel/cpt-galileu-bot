@@ -16,7 +16,7 @@ for (const file of commandFiles) {
 client.on("ready", (msg) => {
   console.log(`Logged in as ${client.user.tag}!`);
   // new Discord.Message(client, { message: "O pai ta on" });
-  client.channels.get("256168112561455104").send("O pai ta on");
+  client.channels.cache.get("256168112561455104").send("O pai ta on");
 });
 
 client.on("message", (msg) => {
