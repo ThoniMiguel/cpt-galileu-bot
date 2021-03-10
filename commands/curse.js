@@ -23,7 +23,5 @@ function api(msg) {
       //   msg.channel
       //     .send("<@" + pingPerson.user.id + ">")
       //     .then(msg.delete({ timeout: 0 }));
-      let user = msg.guild.members.random();
-      console.log(user.user);
     });
 }

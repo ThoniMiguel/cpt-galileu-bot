@@ -13,8 +13,9 @@ for (const file of commandFiles) {
 
   client.commands.set(command.name, command);
 }
-client.on("ready", () => {
+client.on("ready", (msg) => {
   console.log(`Logged in as ${client.user.tag}!`);
+  msg.channel.send("O pai ta ON");
 });
 
 client.on("message", (msg) => {
