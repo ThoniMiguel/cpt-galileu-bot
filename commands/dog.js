@@ -14,6 +14,7 @@ function api(msg) {
       return data.json();
     })
     .then((res) => {
+      console.log("doggo img sent");
       let doggoImg = res.message;
       msg.channel.send("Catioro Fofo", { files: [doggoImg] });
     });
