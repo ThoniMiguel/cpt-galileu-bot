@@ -42,6 +42,9 @@ client.on("message", (msg) => {
     case "dog":
       client.commands.get("dog").execute(msg, args);
       break;
+    case "curse":
+      client.commands.get("curse").execute(msg, args);
+      break;
     default:
       msg.reply("Comando não encontrado. Larga de ser burro. PIU!");
   }
