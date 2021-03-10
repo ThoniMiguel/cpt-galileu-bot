@@ -3,11 +3,11 @@ module.exports = {
   name: "cat",
   description: "sending random cats imgs",
   execute(msg, args) {
-    api();
+    api(msg);
   },
 };
 
-function api() {
+function api(msg) {
   const url = "https://api.thecatapi.com/v1/images/search";
 
   fetch(url)
@@ -16,5 +16,6 @@ function api() {
     })
     .then((res) => {
       console.log(res);
+      msg.reply({ files: res[0].url });
     });
 }
