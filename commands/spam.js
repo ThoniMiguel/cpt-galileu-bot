@@ -12,6 +12,7 @@ module.exports = {
       number = parseInt(number);
       if (message.length > 20 || isNaN(number) || number > 8) {
         msg.reply("Comando ta meio errado ai neh... tenta denovo... PIU!");
+        console.log(message);
         return;
       } else {
         for (let i = 0; i < number; i++) {
