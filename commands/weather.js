@@ -17,8 +17,13 @@ function api(msg, args) {
   } else {
     let cityName = args[0]; //api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}
     let url = `http://api.openweathermap.org/data/2.5/weather?q=london&appid=afdf4bc6fc4046f3c58451311b52990b`;
+    let url2 =
+      "api.openweathermap.org/data/2.5/weather?q=" +
+      cityName +
+      "&appid=" +
+      API_KEY;
     console.log(`city name: ${cityName}`);
-    fetch(url)
+    fetch(url2)
       .then((data) => {
         return data.json();
       })
