@@ -2,8 +2,8 @@ module.exports = {
   name: "spam",
   description: "spam msgs",
   execute(msg, args) {
-    if (args == null) {
-      msg.reply("Comando vazio? Quer me fuder porra?!... PIU");
+    if (args.length == 0) {
+      msg.reply("Comando vazio???Quer me fuder porra?!... PIU");
       return;
     } else {
       let message = args[0];
