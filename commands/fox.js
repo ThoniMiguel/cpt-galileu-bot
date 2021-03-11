@@ -11,7 +11,9 @@ function api(msg) {
   const url = "https://randomfox.ca/floof/";
 
   fetch(url)
-    .then((data) => data.json())
+    .then((data) => {
+      return data.json();
+    })
     .then((res) => {
       msg.channel.send("What does the fox say?", { files: res.image });
     });
