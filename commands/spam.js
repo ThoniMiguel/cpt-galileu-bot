@@ -10,7 +10,7 @@ module.exports = {
       let number = args[1];
 
       number = parseInt(number);
-      if (message.length > 20 || isNaN(number) || number > 8) {
+      if (message.length > 30 || isNaN(number) || number > 8) {
         msg.reply("Comando ta meio errado ai neh... tenta denovo... PIU!");
         console.log(message);
         return;
