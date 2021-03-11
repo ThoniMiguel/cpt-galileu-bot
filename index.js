@@ -50,6 +50,9 @@ client.on("message", (msg) => {
     case "spam":
       client.commands.get("spam").execute(msg, args);
       break;
+    case "fox":
+      client.commands.get("fox").execute(msg, args);
+      break;
     default:
       msg.reply("Comando não encontrado. Larga de ser burro. PIU!");
   }
