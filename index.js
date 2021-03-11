@@ -47,6 +47,9 @@ client.on("message", (msg) => {
     case "curse":
       client.commands.get("curse").execute(msg, args);
       break;
+    case "spam":
+      client.commands.get("spam").execute(msg, args);
+      break;
     default:
       msg.reply("Comando não encontrado. Larga de ser burro. PIU!");
   }
