@@ -17,6 +17,7 @@ function api(msg, args) {
   } else {
     let cityName = args[0];
     let url = `api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`;
+    console.log(`city name: ${cityName}`);
     fetch(url)
       .then((data) => {
         return data.json();
