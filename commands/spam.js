@@ -2,6 +2,10 @@ module.exports = {
   name: "spam",
   description: "spam msgs",
   execute(msg, args) {
+    if (args == null) {
+      msg.reply("Comando vazio? Quer me fuder porra?!... PIU");
+      return;
+    }
     let message = args[0];
     let number = args[1];
 
