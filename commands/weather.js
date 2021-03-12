@@ -7,7 +7,7 @@ module.exports = {
   execute(msg, args) {},
 };
 
-function weather(msg, args) {
+function weatherFunction(msg, args) {
   let city = args[0];
   weather.find({ search: city, degreeType: "C" }, (err, result) => {
     if (err) console.log(err);
