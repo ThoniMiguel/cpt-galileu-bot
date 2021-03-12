@@ -29,7 +29,7 @@ function weatherFunction(msg, args) {
     } else {
       let cityName = result[0].location.name;
       let temperature = result[0].current.temperature;
-      console.log(`${cityName} ${temperature}°C`);
+      msg.reply(`Em ${cityName} está ${temperature}°C!`);
     }
   });
 }
