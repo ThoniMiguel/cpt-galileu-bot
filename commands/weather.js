@@ -4,7 +4,9 @@ const weather = require("weather-js");
 module.exports = {
   name: "weather",
   description: "Weather forecast",
-  execute(msg, args) {},
+  execute(msg, args) {
+    weatherFunction(msg, args);
+  },
 };
 
 function weatherFunction(msg, args) {
