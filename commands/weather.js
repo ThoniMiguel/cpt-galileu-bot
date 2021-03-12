@@ -14,7 +14,14 @@ function weatherFunction(msg, args) {
     msg.reply("Sem argumento nenhum? Quer me fuder porra?! PIU");
     return;
   }
-  let city = args[0];
+  let city;
+  if (args.length > 1) {
+    for (let i = 0; i < args.length; i++) {
+      city = args.join(" ");
+    }
+  } else if (args.length === 1) {
+    city = args[0];
+  }
   weather.find({ search: city, degreeType: "C" }, (err, result) => {
     if (err) console.log(err);
     if (result.length === 0) {
