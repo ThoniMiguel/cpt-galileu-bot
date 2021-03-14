@@ -23,7 +23,7 @@ module.exports = {
 
 async function insertPushUp(rep) {
   try {
-    await client.connect();
+    await client.connect( {useNewUrlParser: true});
     const database = client.db("PushUps");
     const pushupCollection = database.collection("pushupsCollection");
     // doc to be inserted
