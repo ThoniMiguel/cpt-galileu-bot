@@ -26,7 +26,7 @@ async function insertPushUp(rep) {
     let simpleFullDate = fullDate.toLocaleString("pt-BR", {timezone:"Brasil/Brasilia"});
     let simpleDate = `${fullDate.getDate()}/${fullDate.getMonth() + 1}`;
     console.log(
-      fullDate +
+      fullDate.getTimezoneOffset() +
         "\n" +
         simpleFullDate +
         "\n" +
