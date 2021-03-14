@@ -59,6 +59,9 @@ client.on("message", (msg) => {
     case "weather":
       client.commands.get("weather").execute(msg, args);
       break;
+    case "pushup":
+      client.commands.get("pushup").execute(msg, args);
+      break;
     default:
       msg.reply("Comando não encontrado. Larga de ser burro. PIU!");
   }
