@@ -11,11 +11,11 @@ module.exports = {
     "Responsible for storing data on a mongoDB about my daily pushups",
   execute(msg, args) {
     if(args.length === 0){
-      insertPushUp(10);
+      insertPushUp(10).catch(console.dir);
       return;
     }
     if (msg.author.username === "The_Joker") {
-      insertPushUp(args[0]);
+      insertPushUp(args[0]).catch(console.dir);
       return;
     }
   },
