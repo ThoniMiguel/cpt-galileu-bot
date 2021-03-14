@@ -10,8 +10,13 @@ module.exports = {
   description:
     "Responsible for storing data on a mongoDB about my daily pushups",
   execute(msg, args) {
+    if(args.length === 0){
+      insertPushUp(10);
+      return;
+    }
     if (msg.author.username === "The_Joker") {
       insertPushUp(args[0]);
+      return;
     }
   },
 };
@@ -23,7 +28,7 @@ async function insertPushUp(rep) {
     const pushupCollection = database.collection("pushupsCollection");
     // doc to be inserted
     let fullDate = new Date();
-    let fullDateBrazil = fullDate.setHours(fullDate.getHours() - 4);
+    let fullDateBrazil = fullDate.setHours(fullDate.getHours() - 3);
     let simpleFullDate = fullDate.toLocaleString("pt-BR", {
       timezone: "Brasil/Brasilia",
     });
@@ -40,6 +45,7 @@ async function insertPushUp(rep) {
         "Repetitions:" +
         rep
     );
+
   } finally {
     client.close();
   }
