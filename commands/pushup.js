@@ -24,10 +24,10 @@ async function insertPushUp(rep) {
     // doc to be inserted
     let fullDate = new Date();
     let fullDateBrazil = fullDate.setHours(fullDate.getHours() - 4);
-    let simpleFullDate = fullDateBrazil.toLocaleString("pt-BR", {
+    let simpleFullDate = fullDate.toLocaleString("pt-BR", {
       timezone: "Brasil/Brasilia",
     });
-    let simpleDate = `${fullDateBrazil.getDate()}/${fullDateBrazil.getMonth() + 1}`;
+    let simpleDate = `${fullDate.getDate()}/${fullDate.getMonth() + 1}`;
     console.log(
       fullDate +
         "\n" +
