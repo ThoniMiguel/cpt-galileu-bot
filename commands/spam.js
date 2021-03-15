@@ -1,16 +1,17 @@
 module.exports = {
   name: "spam",
-  description: "spam msgs",
+  description: "Spam some msgs",
   execute(client, msg, args) {
     if (args.length == 0) {
       msg.reply("Comando vazio???Quer me fuder porra?!... PIU");
       return;
     } else {
-      let message = args[0];
-      let number = args[1];
+      let message = args.join(" ");
+      message = message.substring(0, message.length - 1);
+      let number = args[args.length - 1];
       const maxSpams = 5;
       number = parseInt(number);
-      if (message.length > 30 || isNaN(number) || number > maxSpams) {
+      if (message.length > 100 || isNaN(number) || number > maxSpams) {
         msg.reply("Comando ta meio errado ai neh... tenta denovo... PIU!");
         console.log(message);
         return;
