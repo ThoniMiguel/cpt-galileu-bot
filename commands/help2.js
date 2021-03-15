@@ -11,6 +11,7 @@ module.exports = {
             // console.log(`./${file}`);
             let info = require(`./${file}`);
             console.log(`${info.name} - ${info.description}`);
+            console.log("Trying some random shit");
         });
     
     }
