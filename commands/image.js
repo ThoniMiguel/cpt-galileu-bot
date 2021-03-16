@@ -14,8 +14,9 @@ module.exports = {
     if (imgQuery === undefined) {
       return msg.channel.send("Não achei essa imagem ai nao em.... my bad");
     }
-    const imgResults = await google.scrape(imgQuery, 50);
-    msg.channel.send(imgResults[randomNumber(0, 49)].url);
+    const numberOfImgs = 20;
+    const imgResults = await google.scrape(imgQuery, numberOfImgs);
+    msg.channel.send(imgResults[randomNumber(0, numberOfImgs-1)].url);
   },
 };
 
