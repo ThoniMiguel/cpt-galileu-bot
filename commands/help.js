@@ -1,8 +1,9 @@
 const fs = require("fs");
 module.exports = {
     name:"help",
+    aliases: ['h'],
     description: "Show a list of available commands",
-    execute(client, msg, args, Discord){
+    execute(client, msg, args, Discord, cmd){
         const newEmbed = new Discord.MessageEmbed();
         const commandFiles = fs
         .readdirSync("./commands/")
@@ -16,5 +17,8 @@ module.exports = {
         });
 
         msg.channel.send(newEmbed);
+        if(cmd === 'h'){
+            console.log("I have been summoned");
+        }
     }
 }

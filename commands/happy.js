@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 module.exports = {
   name: "happy",
   description: "Happy replies!",
-  execute(client, msg, args) {
+  execute(client, msg, args, Discord, cmd) {
     happy(msg);
   },
 };

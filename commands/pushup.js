@@ -11,7 +11,7 @@ module.exports = {
   name: "pushup",
   description:
     "Responsible for storing data on a mongoDB about my daily pushups",
-  execute(client, msg, args) {
+    execute(client, msg, args, Discord, cmd) {
     if (msg.author.username === "The_Joker") {
       if (args.length === 0) {
         insertPushUp(10, msg).catch(console.dir);

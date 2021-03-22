@@ -1,7 +1,7 @@
 module.exports = {
   name: "spam",
   description: "Spam some msgs",
-  execute(client, msg, args) {
+  execute(client, msg, args, Discord, cmd) {
     if (args.length == 0) {
       msg.reply("Comando vazio???Quer me fuder porra?!... PIU");
       return;

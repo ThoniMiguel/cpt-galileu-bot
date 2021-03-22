@@ -3,7 +3,7 @@ let desligar = require("../index");
 module.exports = {
   name: "facts",
   description: "Spitting Random facts",
-  execute(client, msg, args) {
+  execute(client, msg, args, Discord, cmd) {
     let factsRep = setInterval(function () {
       const URL = "https://useless-facts.sameerkumar.website/api";
 

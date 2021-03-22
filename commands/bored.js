@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 module.exports = {
   name: "bored",
   description: "Return some random activities to do when bored",
-  execute(client, msg, args, Discord) {
+  execute(client, msg, args, Discord, cmd) {
     api(msg, Discord);
   },
 };
