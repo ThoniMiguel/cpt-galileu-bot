@@ -17,14 +17,9 @@ module.exports = {
 
 async function ytSearch(args,Discord, msg){
         search.GetListByKeyword(args, true).then((data) => {
-            let videoTitle = data.items[0].title;
             let videoId = data.items[0].id;
-            let videoThumbnail = data.items[0].thumbnail.thumbnails[0].url;
-            const embed = new Discord.MessageEmbed()
-            .setTitle(videoTitle)
-            .setURL(`https://www.youtube.com/watch?v=${videoId}`)
-            .setImage(videoThumbnail);
-            msg.channel.send(embed);
+            let videoUrl = `https://www.youtube.com/watch?v=${videoId}`
+            msg.channel.send(videoUrl);
         }).catch((error) => {
             console.dir(error);
             msg.channel.send("Achei nada nao");
