@@ -1,0 +1,77 @@
+const pprt = require("puppeteer");
+
+module.exports = {
+    name:"scraping",
+    description:"Scraps a given URL and returns an img",
+    async execute(client, msg, args, Discord, cmd){
+        const regex = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
+
+        if(args.length > 1){
+            msg.channel.send("passa só uma url ai meu chapa, faz favor neh... :unamused: ");
+            return;
+        }else if(!regex.test(args[0])){
+            msg.channel.send("hmmm sei nao... isso nao ta me parecendo com uma URL... :face_with_raised_eyebrow: ");
+            return;
+        }
+
+
+        let url = args[0];
+
+        let browser = null;
+
+        try{
+            browser = await pprt.launch({ args: ['--no-sandbox'] });
+            
+            let page = await browser.newPage();
+
+            await page.goto(url, {waitUntil: "networkidle2"});
+
+            let screenshot = await page.screenshot({path:"./screenshot.png", fullPage: true});
+
+            console.log(screenshot);
+        }catch(err){
+            msg.channel.send("Deu algo errado meu bom...");
+            console.log(err);
+        }finally{
+            await browser.close();
+            console.log(`${msg.author.username} requisitou algo do puppeteer`);
+        }
+
+
+    //     let epicGamesFree = "https://www.epicgames.com/store/pt-BR/free-games";
+
+    //     let browser = null;
+        
+    //     try{
+    //         browser = await pptr.launch({ args: ['--no-sandbox'] });
+    //         let page = await browser.newPage();
+           
+    //         await page.goto(epicGamesFree, {waitUntil: "networkidle2"});
+
+
+    //         let data = await page.evaluate(() => {
+    //             let imgRaw = document.querySelector('div[class="css-1lozana"] > div > img');
+    //             let img = imgRaw.getAttribute("src");
+
+    //             return {
+    //                 img
+    //             }
+    //         })
+
+    //         let embed = new Discord.MessageEmbed()
+    //         .setTitle("Jogo gratuito da epic games")
+    //         .setURL(epicGamesFree)
+    //         .setImage(data.img);
+            
+
+    //         msg.channel.send(embed);
+    //     }catch (err){
+    //         console.log("error" + err.message);
+    //         msg.channel.send("pô meu brother... nao foi dessa vez que eu achei")
+    //     }finally{
+    //         await browser.close();    
+    //         console.log(`${msg.author.username} requisitou a img`);
+    //     }
+    }
+}
+
