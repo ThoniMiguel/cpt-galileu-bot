@@ -8,6 +8,7 @@ const google = new Scraper({
 });
 module.exports = {
   name: "image",
+  aliases: "rule34",
   description: "Scrape images on the web :)",
   async execute(client, msg, args, Discord, cmd) {
     const imgQuery = args.join(" ");
@@ -15,6 +16,11 @@ module.exports = {
       return msg.channel.send("Não achei essa imagem ai nao em.... my bad");
     }
     const numberOfImgs = 20;
+    if(cmd === "rule34"){
+      const imgResults = await google.scrape("rule 34 " + imgQuery, numberOfImgs);
+      msg.channel.send(imgResults[randomNumber(0, numberOfImgs-1)].url);
+      return;
+    }
     const imgResults = await google.scrape(imgQuery, numberOfImgs);
     msg.channel.send(imgResults[randomNumber(0, numberOfImgs-1)].url);
   },
